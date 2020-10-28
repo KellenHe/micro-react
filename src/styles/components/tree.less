@@ -1,0 +1,26 @@
+@import '../colors.less';
+
+.@{tree-prefix-cls} {
+  color: @jet-black-65;
+  .@{tree-prefix-cls}-switcher {
+    .@{tree-prefix-cls}-switcher-icon, .@{ant-prefix}-select-tree-switcher-icon {
+      color: @jet-black-45;
+    }
+  }
+
+  &-checkbox-disabled + .ant-tree-node-content-wrapper {
+    color: @jet-black-25;
+  }
+
+  &-checkbox-inner {
+    border-radius: 2px;
+  }
+
+  &-switcher {
+    width: 16px;
+  }
+
+  &-checkbox {
+    margin-left: 4px;
+  }
+}

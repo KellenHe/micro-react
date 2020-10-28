@@ -1,0 +1,27 @@
+@menu-dark-submenu-bg: #0F295C;
+@menu-dark-bg: #1F3B72;
+@menu-dark-item-active-bg: #405C92;
+
+@menu-prefix-cls: ~'@{ant-prefix}-menu';
+
+.@{menu-prefix-cls} {
+  color: @text-color-secondary;
+  &-item:hover,
+  &-item-active {
+    background-color: @item-hover-bg;
+  }
+
+  &-horizontal {
+    &:not(.@{menu-prefix-cls}-dark) {
+      > .@{menu-prefix-cls}-item,
+      > .@{menu-prefix-cls}-submenu {
+        &:hover,
+        &-active,
+        &-open,
+        &-selected {
+          border-bottom: 2px solid transparent;
+        }
+      }
+    }
+  }
+}

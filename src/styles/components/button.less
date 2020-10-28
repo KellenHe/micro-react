@@ -1,0 +1,12 @@
+@btn-padding-horizontal-sm: @padding-xs;
+@btn-padding-horizontal-base: @padding-md;
+
+@btn-prefix-cls: ~'@{ant-prefix}-btn';
+
+.@{btn-prefix-cls} {
+  &:not(&-sm) {
+    .@{iconfont-css-prefix}:not(:last-child) {
+      margin-left: -4px;
+    }
+  }
+}

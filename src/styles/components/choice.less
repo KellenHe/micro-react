@@ -1,0 +1,45 @@
+@import '../theme-default.less';
+
+// ---------- radio -----------
+@radio-prefix-cls: ~'@{ant-prefix}-radio';
+
+.@{radio-prefix-cls}-button-wrapper {
+  &:first-child {
+    border-radius: @border-radius-base 0 0 @border-radius-base;
+  }
+  &:last-child {
+    border-radius: 0 @border-radius-base @border-radius-base 0;
+  }
+  &:first-child:last-child {
+    border-radius: @border-radius-base;
+  }
+}
+
+// ---------- checkbox -----------
+@checkbox-prefix-cls: ~'@{ant-prefix}-checkbox';
+
+.@{checkbox-prefix-cls}-wrapper,
+.@{checkbox-prefix-cls}-group-item {
+  margin-right: @height-base;
+  margin-left: 0;
+}
+.@{checkbox-prefix-cls}-wrapper + .@{checkbox-prefix-cls}-wrapper {
+  margin-left: 0;
+}
+
+// -------------input----------------
+@input-prefix-cls: ~'@{ant-prefix}-input';
+
+.@{input-prefix-cls} {
+  &-suffix {
+    margin-left: 8px;
+  }
+  &-prefix {
+    margin-right: 8px;
+  }
+}
+
+// --------------textarea------------
+textarea.@{input-prefix-cls} {
+  padding: 8px 12px;
+}

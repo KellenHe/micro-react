@@ -1,0 +1,56 @@
+// src/access.ts
+export default function access(initialState: { currentUser?: API.CurrentUser | undefined }) {
+  const { currentUser } = initialState || {};
+  return {
+    canAddUser: canAccess(currentUser, 'btn:user:add'),
+    canEditUser: canAccess(currentUser, 'btn:user:edit'),
+    canDeleteUser: canAccess(currentUser, 'btn:user:delete'),
+    canAddRole: canAccess(currentUser, 'btn:role:add'),
+    canEditRole: canAccess(currentUser, 'btn:role:edit'),
+    canDeleteRole: canAccess(currentUser, 'btn:role:delete'),
+    canViewDep: canAccess(currentUser, 'btn:department:view'),
+    canAddDep: canAccess(currentUser, 'btn:department:add'),
+    canEditDep: canAccess(currentUser, 'btn:department:edit'),
+    canDeleteDep: canAccess(currentUser, 'btn:department:delete'),
+    canAddMenu: canAccess(currentUser, 'btn:menu:add'),
+    canEditMenu: canAccess(currentUser, 'btn:menu:edit'),
+    canDeleteMenu: canAccess(currentUser, 'btn:menu:delete'),
+    canViewTask: canAccess(currentUser, 'btn:task:view'),
+    canAddTask: canAccess(currentUser, 'btn:task:add'),
+    canEditTask: canAccess(currentUser, 'btn:task:edit'),
+    canDeleteTask: canAccess(currentUser, 'btn:task:delete'),
+    canRunTask: canAccess(currentUser, 'btn:task:run'),
+    canStartTask: canAccess(currentUser, 'btn:task:start'),
+    canPauseTask: canAccess(currentUser, 'btn:task:pause'),
+    canRecoverTask: canAccess(currentUser, 'btn:task:recover'),
+    canViewDatabase: canAccess(currentUser, 'btn:database:view'),
+    canAddDatabase: canAccess(currentUser, 'btn:database:add'),
+    canEditDatabase: canAccess(currentUser, 'btn:database:edit'),
+    canDeleteDatabase: canAccess(currentUser, 'btn:database:delete'),
+    canTestDatabase: canAccess(currentUser, 'btn:database:test'),
+    canViewServer: canAccess(currentUser, 'btn:server:view'),
+    canAddServer: canAccess(currentUser, 'btn:server:add'),
+    canEditServer: canAccess(currentUser, 'btn:server:edit'),
+    canDeleteServer: canAccess(currentUser, 'btn:server:delete'),
+    canTestServer: canAccess(currentUser, 'btn:server:test'),
+    canViewAuthorityData: canAccess(currentUser, 'btn:authority_data:view'),
+    canAddAuthorityData: canAccess(currentUser, 'btn:authority_data:add'),
+    canEditAuthorityData: canAccess(currentUser, 'btn:authority_data:edit'),
+    canDeleteAuthorityData: canAccess(currentUser, 'btn:authority_data:delete'),
+    canViewDict: canAccess(currentUser, 'btn:dict:view'),
+    canAddDict: canAccess(currentUser, 'btn:dict:add'),
+    canEditDict: canAccess(currentUser, 'btn:dict:edit'),
+    canDeleteDict: canAccess(currentUser, 'btn:dict:delete'),
+    canExportDict: canAccess(currentUser, 'btn:dict:export'),
+    canViewFile: canAccess(currentUser, 'btn:file:view'),
+    canAddFile: canAccess(currentUser, 'btn:file:add'),
+    canEditFile: canAccess(currentUser, 'btn:file:edit'),
+    canDeleteFile: canAccess(currentUser, 'btn:file:delete'),
+    canUploadFile: canAccess(currentUser, 'btn:file:upload'),
+    canDownloadFile: canAccess(currentUser, 'btn:file:download'),
+  };
+}
+
+function canAccess(currentUser: API.CurrentUser | undefined, permission: string): boolean {
+  return (currentUser !== undefined && currentUser.permissions.indexOf(permission) !== -1);
+}
